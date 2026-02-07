@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Meta description and keywords now use data-lang-key for dynamic translation -->
+    <meta name="description" data-lang-key="meta_description" content="">
+    <meta name="author" content="Hamed Sayed Ahmed Abu Sallam">
+    <meta name="keywords" data-lang-key="meta_keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title also uses data-lang-key for dynamic translation -->
+    <title data-lang-key="page_title"></title>
+    <!-- === CSS files === -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/skins/color-1.css">
+    <!-- New language-specific styles for RTL/LTR adjustments -->
+    <link rel="stylesheet" href="css/language-styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Clicker+Script&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Switcher CSS links -->
+    <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
+    <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
+    <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
+    <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
+    <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
+    <!-- Main Style Switcher CSS -->
+    <link rel="stylesheet" href="css/style-switcher.css">
+</head>
+<body class="dark"> <!-- Added class="dark" here to make dark mode default -->
+    <!-- === Main container Start === -->
+    <div class="main-container">
+        <!-- === Aside Start (Navigation Sidebar) === -->
+        <div class="aside">
+            <div class="logo">
+                <a href="#home"><span>H</span>amed</a>
+            </div>
+            <div class="nav-toggler">
+                <span></span>
+            </div>
+            <ul class="nav">
+                <!-- Navigation links use data-lang-key for translatable text and title attributes -->
+                <li><a href="#home" class="active" data-lang-key="nav_home_title"><i class="fas fa-home"></i> <span data-lang-key="nav_home"></span> </a></li>
+                <li><a href="#about" data-lang-key="nav_about_title"><i class="fas fa-user"></i> <span data-lang-key="nav_about"></span> </a></li>
+                <li><a href="#certificates" data-lang-key="nav_certificates_title"><i class="fas fa-certificate"></i> <span data-lang-key="nav_certificates"></span> </a></li>
+                <li><a href="#services" data-lang-key="nav_services_title"><i class="fas fa-list"></i> <span data-lang-key="nav_services"></span> </a></li>
+                <li><a href="#portfolio" data-lang-key="nav_portfolio_title"><i class="fas fa-briefcase"></i> <span data-lang-key="nav_portfolio"></span> </a></li>
+                <li><a href="#contact" data-lang-key="nav_contact_title"><i class="fas fa-comments"></i> <span data-lang-key="nav_contact"></span> </a></li>
+            </ul>
+            <!-- Language Switcher Buttons moved inside aside for consistency -->
+            <div class="language-switcher">
+                <button id="lang-ar" class="lang-button">AR</button>
+                <button id="lang-en" class="lang-button">EN</button>
+            </div>
+            <!-- Audio Toggle Button -->
+            <div class="audio-toggle-wrapper">
+                <button id="audioToggle" class="audio-toggle-btn" onclick="toggleAudio()" title="Click to disable audio">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://wa.me/201067528457" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://linkedin.com/in/hamed-abu-sallam" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/hamed-abu-sallam" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://behance.net/hamed-abu-sallam" target="_blank" rel="noopener" title="Behance"><i class="fab fa-behance"></i></a>
+                <a href="https://www.youtube.com/@DigitonLifeMix" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/digitonlifemix" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <!-- === Aside End === -->
+
+        <!-- === Main Content Start === -->
+        <div class="main-content">
+            <!-- === Home Section start === -->
+            <section class="home active section" id="home">
+                <div class="container">
+                    <div class="row">
+                        <div class="home-info padd-15">
+                            <!-- home_greeting and home_profession use innerHTML to allow for nested spans -->
+                            <h3 class="hello" data-lang-key="home_greeting"></h3>
+                            <h3 class="my-profession" data-lang-key="home_profession"></h3>
+                            <p class="description" data-lang-key="home_description"></p>
+                            <a href="files/Hamed_Abu_Sallam_CV.pdf" class="btn" id="download-cv-btn" data-lang-key="home_download_cv"></a>
+                        </div>
+                        <div class="home-img padd-15">
+                            <img src="images/me.png" alt="[صورة حامد سيد أحمد]">
+                        </div>    
+                    </div>
+                </div>
+            </section>
+            <!-- === Home Section End === -->
+
+            <!-- === About Section Start === -->
+            <section class="about section" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2 data-lang-key="about_title"></h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="about-content padd-15">
+                            <div class="row">
+                                <div class="about-text padd-15">
+                                    <h3 data-lang-key="about_intro"></h3>
+                                    <p data-lang-key="about_description"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="personal-info padd-15">
+                                    <div class="row">
+                                        <div class="info-item padd-15">
+                                            <p><span data-lang-key="info_birthdate_label"></span> : <span>23 Dec, 1996</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p><span data-lang-key="info_address_label"></span> : <span data-lang-key="info_address_value"></span></p>
+                                        </div>
+                                         <div class="info-item padd-15">
+                                            <p><span data-lang-key="info_nationality_label"></span> : <span data-lang-key="info_nationality_value"></span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p><span data-lang-key="info_email_label"></span> : <span>hamedabusallam@gmail.com</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p><span data-lang-key="info_phone_label"></span> : <span>+20 1067528457</span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p><span data-lang-key="info_degree_label"></span> : <span data-lang-key="info_degree_value"></span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p><span data-lang-key="info_freelance_label"></span> : <span data-lang-key="info_freelance_value"></span></p>
+                                        </div>
+                                        <div class="info-item padd-15">
+                                            <p><span data-lang-key="info_languages_label"></span> : <span data-lang-key="info_languages_value"></span></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="buttons padd-15">
+                                            <a href="#contact" data-section-index="1" class="btn hire-me" id="hire-me-btn" data-lang-key="about_hire_me"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skills padd-15">
+                                    <div class="row">
+                                        <div class="skill-item padd-15">
+                                            <h5 data-lang-key="skill_html"></h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 67%;"></div>
+                                                <div class="skill-percent">67%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5 data-lang-key="skill_css"></h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 75%;"></div>
+                                                <div class="skill-percent">75%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5 data-lang-key="skill_js"></h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 60%;"></div>
+                                                <div class="skill-percent">60%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5 data-lang-key="skill_react"></h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 50%;"></div>
+                                                <div class="skill-percent">50%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5 data-lang-key="skill_photoshop"></h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 60%;"></div>
+                                                <div class="skill-percent">60%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5 data-lang-key="skill_premiere"></h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 40%;"></div>
+                                                <div class="skill-percent">40%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item padd-15">
+                                            <h5 data-lang-key="skill_after effects"></h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 40%;"></div>
+                                                <div class="skill-percent">40%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="education padd-15">
+                                    <h3 class="title" data-lang-key="education_title"></h3>
+                                    <div class="row">
+                                        <div class="timeline-box padd-15">
+                                            <div class="timeline shadow-dark">
+                                                <!-- Timeline Item -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="edu_date_1">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="edu_title_1"></h4>
+                                                    <p class="timeline-text" data-lang-key="edu_desc_1"></p>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="technical-certs padd-15">
+                                    <h3 class="title" data-lang-key="tech_certs_title"></h3>
+                                    <div class="row">
+                                        <div class="timeline-box padd-15">
+                                            <div class="timeline shadow-dark">
+                                                <!-- Technical Certificate 1 -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="cert_tech_date_1">
+                                                        <i class="fa fa-certificate"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="cert_tech_title_1"></h4>
+                                                    <p class="timeline-text" data-lang-key="cert_tech_desc_1"></p>
+                                                 </div>
+                                                 <!-- Technical Certificate 2 -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="cert_tech_date_2">
+                                                        <i class="fa fa-certificate"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="cert_tech_title_2"></h4>
+                                                    <p class="timeline-text" data-lang-key="cert_tech_desc_2"></p>
+                                                 </div>
+                                                 <!-- Technical Certificate 3 -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="cert_tech_date_3">
+                                                        <i class="fa fa-certificate"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="cert_tech_title_3"></h4>
+                                                    <p class="timeline-text" data-lang-key="cert_tech_desc_3"></p>
+                                                 </div>
+                                                 <!-- Technical Certificate 4 -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="cert_tech_date_4">
+                                                        <i class="fa fa-certificate"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="cert_tech_title_4"></h4>
+                                                    <p class="timeline-text" data-lang-key="cert_tech_desc_4"></p>
+                                                 </div>
+                                                 <!-- Technical Certificate 5 -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="cert_tech_date_5">
+                                                        <i class="fa fa-certificate"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="cert_tech_title_5"></h4>
+                                                    <p class="timeline-text" data-lang-key="cert_tech_desc_5"></p>
+                                                 </div>
+                                                 <!-- Technical Certificate 6 -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="cert_tech_date_6">
+                                                        <i class="fa fa-certificate"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="cert_tech_title_6"></h4>
+                                                    <p class="timeline-text" data-lang-key="cert_tech_desc_6"></p>
+                                                 </div>
+                                                 <!-- Technical Certificate 7 -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="cert_tech_date_7">
+                                                        <i class="fa fa-certificate"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="cert_tech_title_7"></h4>
+                                                    <p class="timeline-text" data-lang-key="cert_tech_desc_7"></p>
+                                                 </div>
+                                                 <!-- Technical Certificate 8 -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="cert_tech_date_8">
+                                                        <i class="fa fa-certificate"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="cert_tech_title_8"></h4>
+                                                    <p class="timeline-text" data-lang-key="cert_tech_desc_8"></p>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="experience padd-15">
+                                    <h3 class="title" data-lang-key="experience_title"></h3>
+                                    <div class="row">
+                                        <div class="timeline-box padd-15">
+                                            <div class="timeline shadow-dark">
+                                                <!-- Timeline Item -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="exp_date_1">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="exp_title_1"></h4>
+                                                    <p class="timeline-text" data-lang-key="exp_desc_1"></p>
+                                                 </div>
+                                                 <!-- Timeline Item -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="exp_date_2">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="exp_title_2"></h4>
+                                                    <p class="timeline-text" data-lang-key="exp_desc_2"></p>
+                                                 </div>
+                                                 <!-- Timeline Item -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="exp_date_3">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="exp_title_3"></h4>
+                                                    <p class="timeline-text" data-lang-key="exp_desc_3"></p>
+                                                 </div>
+                                                 <!-- Timeline Item -->
+                                                 <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date" data-lang-key="exp_date_4">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </h3>
+                                                    <h4 class="timeline-title" data-lang-key="exp_title_4"></h4>
+                                                    <p class="timeline-text" data-lang-key="exp_desc_4"></p>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- === About Section End === -->
+
+            <!-- === Certificates Section Start === -->
+            <section class="certificates section" id="certificates">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2 data-lang-key="certificates_title">Certificates</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- === Adobe Track === -->
+                        <div class="certificate-category padd-15">
+                            <h3 class="track-title" data-lang-key="cert_adobe_track">Adobe Design Track</h3>
+                            <div class="row">
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/Adobe Photoshop.jpeg" alt="Adobe Photoshop Certificate">
+                                    </div>
+                                </div>
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/Adobe illustrator.jpeg" alt="Adobe Illustrator Certificate">
+                                    </div>
+                                </div>
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/Adope InDesign.jpeg" alt="Adobe InDesign Certificate">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- === IT Track === -->
+                        <div class="certificate-category padd-15">
+                            <h3 class="track-title" data-lang-key="cert_it_track">IT & Computer Track</h3>
+                            <div class="row">
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/ICDL.png" alt="ICDL Certificate">
+                                    </div>
+                                </div>
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/Computers And Information.jpeg" alt="Computers And Information Certificate">
+                                    </div>
+                                </div>
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/ITCustomer Suppor.png" alt="IT Customer Support Certificate">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- === Web Development Track === -->
+                        <div class="certificate-category padd-15">
+                            <h3 class="track-title" data-lang-key="cert_web_track">Web Development Track</h3>
+                            <div class="row">
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/Html_Css.png" alt="HTML & CSS Certificate">
+                                    </div>
+                                </div>
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/Python.png" alt="Python Certificate">
+                                    </div>
+                                </div>
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/UX.png" alt="UX Design Certificate">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- === Digital Marketing Track === -->
+                        <div class="certificate-category padd-15">
+                            <h3 class="track-title" data-lang-key="cert_marketing_track">Digital Marketing Track</h3>
+                            <div class="row">
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/Fundamentals of digital marketing _ Google.png" alt="Google Digital Marketing Certificate">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- === Additional Certificates === -->
+                        <div class="certificate-category padd-15">
+                            <h3 class="track-title" data-lang-key="cert_other_track">Other Certificates</h3>
+                            <div class="row">
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/Career college.jpeg" alt="Career College Certificate">
+                                    </div>
+                                </div>
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/certificate_AI.png" alt="Certificate AI">
+                                    </div>
+                                </div>
+                                <div class="certificate-item padd-15">
+                                    <div class="cert-img-container shadow-dark">
+                                        <img src="images/Certificate/certificate_IT.png" alt="Certificate IT">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- === Certificates Section End === -->
+            
+            <!-- === Services Section Start === -->
+            <section class="service section" id="services">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2 data-lang-key="services_title"></h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Service Item Start -->
+                         <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-laptop-code"></i>
+                                </div>
+                                <h4 data-lang-key="service_web_design_title"></h4>
+                                <p data-lang-key="service_web_design_desc"></p>
+                                <a href="#certificates" class="service-cert-link" data-lang-key="service_view_cert"></a>
+                            </div>
+                         </div>
+                        <!-- Service Item End -->
+                        <!-- Service Item Start -->
+                         <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-pencil-ruler"></i>
+                                </div>
+                                <h4 data-lang-key="service_ui_ux_title"></h4>
+                                <p data-lang-key="service_ui_ux_desc"></p>
+                                <a href="#certificates" class="service-cert-link" data-lang-key="service_view_cert"></a>
+                            </div>
+                         </div>
+                        <!-- Service Item End -->
+                        <!-- Service Item Start -->
+                         <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-palette"></i>
+                                </div>
+                                <h4 data-lang-key="service_graphic_design_title"></h4>
+                                <p data-lang-key="service_graphic_design_desc"></p>
+                                <a href="#certificates" class="service-cert-link" data-lang-key="service_view_cert"></a>
+                            </div>
+                         </div>
+                        <!-- Service Item End -->
+                        <!-- Service Item Start -->
+                         <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-search"></i>
+                                </div>
+                                <h4 data-lang-key="service_seo_title"></h4>
+                                <p data-lang-key="service_seo_desc"></p>
+                                <a href="#certificates" class="service-cert-link" data-lang-key="service_view_cert"></a>
+                            </div>
+                         </div>
+                        <!-- Service Item End -->
+                        <!-- Service Item Start -->
+                         <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-tools"></i>
+                                </div>
+                                <h4 data-lang-key="service_tech_support_title"></h4>
+                                <p data-lang-key="service_tech_support_desc"></p>
+                                <a href="#certificates" class="service-cert-link" data-lang-key="service_view_cert"></a>
+                            </div>
+                         </div>
+                        <!-- Service Item End -->
+                        <!-- Service Item Start -->
+                         <div class="service-item padd-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-headset"></i>
+                                </div>
+                                <h4 data-lang-key="service_help_desk_title"></h4>
+                                <p data-lang-key="service_help_desk_desc"></p>
+                                <a href="#certificates" class="service-cert-link" data-lang-key="service_view_cert"></a>
+                            </div>
+                         </div>
+                        <!-- Service Item End -->
+                    </div>
+                </div>
+            </section>
+            <!-- === Services Section End === -->
+
+            <!-- === Portfolio Section Start === -->
+            <section class="portfolio section" id="portfolio">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2 data-lang-key="portfolio_title"></h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="portfolio-heading padd-15">
+                            <h2 data-lang-key="portfolio_projects_heading"></h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- === Portfolio Items start === -->
+                         <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="images/portfolio-1.png" alt="[صورة المشروع #1]">
+                                </div>
+                            </div>
+                         </div>
+                         <!-- === Portfolio Items end === -->
+                         <!-- === Portfolio Items start === -->
+                         <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="images/portfolio-2.png" alt="[صورة المشروع #2]">
+                                </div>
+                            </div>
+                         </div>
+                         <!-- === Portfolio Items end === -->
+                         <!-- === Portfolio Items start === -->
+                         <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="images/portfolio-3.png" alt="[صورة المشروع #3]">
+                                </div>
+                            </div>
+                         </div>
+                         <!-- === Portfolio Items end === -->
+                         <!-- === Portfolio Items start === -->
+                         <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="images/portfolio-4.png" alt="[صورة المشروع #4]">
+                                </div>
+                            </div>
+                         </div>
+                         <!-- === Portfolio Items end === -->
+                         <!-- === Portfolio Items start === -->
+                         <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="images/portfolio-5.png" alt="[صورة المشروع #5]">
+                                </div>
+                            </div>
+                         </div>
+                         <!-- === Portfolio Items end === -->
+                        <!-- === Portfolio Items start === -->
+                         <div class="portfolio-item padd-15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="images/portfolio-6.jpg" alt="[صورة المشروع #6]">
+                                </div>
+                            </div>
+                         </div>
+                         <!-- === Portfolio Items end === -->
+                    </div>
+                </div>
+            </section>
+            <!-- === Portfolio Section End === -->
+
+            <!-- === Contact Section Start === -->
+             <section class="contact section" id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2 data-lang-key="contact_title"></h2>
+                        </div>
+                    </div>
+                    <h3 class="contact-title padd-15" data-lang-key="contact_ready_to_collaborate"></h3>
+                    <h4 class="h4 contact-sub-title padd-15" data-lang-key="contact_inquiry_message"></h4>
+                    <div class="row">
+                        <!-- === Contact info item start === -->
+                         <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-phone"></i></div>
+                            <h4 data-lang-key="contact_call_on"></h4>
+                            <p>+201067528457</p>
+                         </div>
+                         <!-- === Contact info item end === -->
+                         <!-- === Contact info item start === -->
+                         <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-envelope"></i></div>
+                            <h4 data-lang-key="contact_email_at"></h4>
+                            <p>hamedabusallam@gmail.com</p>
+                         </div>
+                         <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-linkedin"></i></div>
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://linkedin.com/in/hamed-abu-sallam" target="_blank" rel="noopener">linkedin.com/in/hamed-abu-sallam</a></p>
+                         </div>
+                         <div class="contact-info-item padd-15">
+                            <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
+                            <h4 data-lang-key="contact_office"></h4>
+                            <p>Egypt - Menofia</p>
+                         </div>
+                         <!-- === Contact info item end === -->
+                    </div>
+                    <!-- === Contact Form === -->
+                     <div class="row">
+                        <div class="contact-form padd-15">
+                            <form id="contactForm">
+                                <div class="row">
+                                    <div class="form-item col-6 padd-15">
+                                        <!-- Form placeholders use data-lang-key for translation -->
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="user_name" name="user_name" data-lang-key="form_name_placeholder" placeholder="Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-item col-6 padd-15">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="user_email" name="user_email" data-lang-key="form_email_placeholder" placeholder="Email" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-item col-12 padd-15">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="subject" name="subject" data-lang-key="form_subject_placeholder" placeholder="Subject" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-item col-12 padd-15">
+                                        <div class="form-group">
+                                            <textarea name="message" id="message" class="form-control" data-lang-key="form_message_placeholder" placeholder="Message" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-item col-12 padd-15">
+                                        <button type="submit" class="btn" data-lang-key="form_send_message_button" title="Send Message">Send Message</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-item col-12 padd-15">
+                                        <div id="formMessage" style="display:none; margin-top: 15px; padding: 10px; border-radius: 5px; text-align: center;"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div> 
+                     </div>
+                </div>
+             </section>
+             <!-- === Contact Section End === -->
+        </div>
+        <!-- === Main Content End === -->
+    </div>
+    <!-- === Main container End === -->
+
+    <!-- === Style Switcher Start === -->
+     <div class="style-switcher">
+        <div class="style-switcher-toggler s-icon">
+            <i class="fas fa-cog fa-spin"></i>
+        </div>
+        <div class="day-night s-icon">
+            <i class="fas"></i>
+        </div>
+        <h4 data-lang-key="theme_colors_title"></h4>
+        <div class="colors">
+            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+            <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+        </div>
+     </div>
+    <!-- === Style Switcher End === -->
+
+    <!-- Tone.js CDN for audio synthesis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js" defer></script>
+    <!-- typed.js for typing animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <!-- EmailJS SDK - MUST load before email-handler.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/index.min.js" onload="window.emailJSLoaded = true; console.log('%c✓ EmailJS CDN loaded successfully', 'color: green; font-weight: bold;');" onerror="console.error('%c✗ EmailJS CDN failed to load', 'color: red; font-weight: bold;');"></script>
+    
+    <!-- Separate languages.js file -->
+    <script src="js/languages.js" defer></script>
+    <!-- Separate audio.js file -->
+    <script src="js/audio.js" defer></script>
+    <!-- EmailJS configuration and form handler -->
+    <script src="js/email-handler.js" defer></script>
+    <!-- Your main script.js -->
+    <script src="js/script.js" defer></script>
+    <!-- Your style-switcher.js -->
+    <script src="js/style-switcher.js" defer></script>
+    
+</body>
+</html>

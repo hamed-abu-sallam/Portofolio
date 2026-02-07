@@ -1,0 +1,197 @@
+/* language-styles.css - Contains CSS rules specifically for RTL/LTR adjustments */
+
+/* RTL adjustments for the entire HTML document when direction is Right-to-Left */
+html[dir="rtl"] {
+    direction: rtl; /* Sets the text direction to right-to-left */
+    text-align: right; /* Aligns text to the right by default for RTL */
+}
+
+/* Specific adjustments for elements in RTL layout */
+
+/* Adjust navigation icon margin and potentially flip icons for RTL */
+html[dir="rtl"] .aside .nav li a i {
+    margin-left: 15px; /* Adds margin to the left of the icon for spacing in RTL */
+    margin-right: 0;   /* Resets any default LTR right margin */
+    /* Use transform: scaleX(-1) for icons that should visually flip (e.g., arrows, calendars) */
+    /* but be cautious as not all icons need or look good when flipped. */
+    /* Example: transform: scaleX(-1); */
+}
+
+/* Ensure navigation icon margin for LTR (default, but explicit for clarity) */
+html[dir="ltr"] .aside .nav li a i {
+    margin-right: 15px; /* Default margin to the right of the icon for LTR */
+    margin-left: 0;    /* Resets any RTL left margin */
+    transform: scaleX(1); /* Ensures no horizontal flip for LTR */
+}
+
+/* Text alignment for main content sections to respect RTL */
+html[dir="rtl"] .home-info,
+html[dir="rtl"] .about-content .about-text,
+html[dir="rtl"] .about .about-content .timeline-date,
+html[dir="rtl"] .about .about-content .timeline-title,
+html[dir="rtl"] .about .about-content .timeline-text,
+html[dir="rtl"] .contact-title,
+html[dir="rtl"] .contact-sub-title,
+html[dir="rtl"] .contact .contact-info-item h4,
+html[dir="rtl"] .contact .contact-info-item p,
+html[dir="rtl"] .certificates .certificate-category .track-title {
+    text-align: right;
+}
+
+/* LTR specific text alignment */
+html[dir="ltr"] .portfolio .portfolio-heading,
+html[dir="ltr"] .certificates .certificate-category .track-title {
+    text-align: left;
+}
+
+/* Adjust padding/margin for items that were left/right aligned, ensuring symmetry in RTL */
+html[dir="rtl"] .padd-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Adjust positioning for section titles' pseudo-elements (underlines) for RTL */
+html[dir="rtl"] .section-title h2::before,
+html[dir="rtl"] .section-title h2::after {
+    left: unset; /* Remove LTR left positioning */
+    right: 0;    /* Align to right edge of the title */
+}
+
+/* Adjust positioning for timeline vertical line and circle dots for RTL */
+html[dir="rtl"] .about .about-content .timeline .timeline-item::before {
+    left: unset;
+    right: 7px; /* Position the vertical line on the right for RTL */
+}
+
+html[dir="rtl"] .about .about-content .timeline .circle-dot {
+    left: unset;
+    right: 0; /* Position the dots on the right for RTL */
+}
+
+/* Adjust margin for icons within timeline dates for RTL */
+html[dir="rtl"] .about .about-content .timeline .timeline-date .fa {
+    margin-right: 0; /* Reset LTR margin */
+    margin-left: 5px; /* Add margin to the left for RTL */
+    /* Optionally flip the calendar icon if desired visually */
+    /* transform: scaleX(-1); */
+}
+html[dir="ltr"] .about .about-content .timeline .timeline-date .fa {
+    margin-right: 5px; /* Default for LTR */
+    margin-left: 0;
+    transform: scaleX(1); /* Ensure no flip for LTR */
+}
+
+
+/* Adjust personal info item span margin for RTL */
+html[dir="rtl"] .about .about-content .personal-info .info-item p span {
+    margin-left: 0; /* Remove LTR left margin */
+    margin-right: 4px; /* Add RTL right margin */
+}
+html[dir="ltr"] .about .about-content .personal-info .info-item p span {
+    margin-left: 4px; /* Default for LTR */
+    margin-right: 0;
+}
+
+
+/* Form control text alignment for RTL */
+html[dir="rtl"] .contact .contact-form .form-control {
+    text-align: right;
+}
+
+/* Specific padding adjustments for contact form columns in RTL to maintain layout */
+html[dir="rtl"] .contact .contact-form .col-6:first-child {
+    padding-right: 15px; /* Swap padding for RTL column layout */
+    padding-left: 0;
+}
+html[dir="rtl"] .contact .contact-form .col-6:last-child {
+    padding-left: 15px; /* Swap padding for RTL column layout */
+    padding-right: 0;
+}
+
+/* Adjustments for home-img pseudo-elements (borders) for RTL */
+html[dir="rtl"] .home-img::after {
+    right: unset; /* Reset LTR position */
+    left: 20px; /* Position on the left for RTL */
+    border-right: none; /* Remove LTR border */
+    border-left: 10px solid var(--skin-color); /* Add RTL border */
+}
+
+html[dir="rtl"] .home-img::before {
+    left: unset; /* Reset LTR position */
+    right: -20px; /* Position on the right for RTL */
+    border-left: none; /* Remove LTR border */
+    border-right: 10px solid var(--skin-color); /* Add RTL border */
+}
+
+/* Adjustments for logo pseudo-elements (borders) for RTL */
+html[dir="rtl"] .aside .logo a::before {
+    left: unset; /* Reset LTR position */
+    right: 0; /* Position on the right for RTL */
+    border-left: none; /* Remove LTR border */
+    border-right: 5px solid var(--skin-color); /* Add RTL border */
+}
+
+html[dir="rtl"] .aside .logo a::after {
+    right: unset; /* Reset LTR position */
+    left: 0; /* Position on the left for RTL */
+    border-right: none; /* Remove LTR border */
+    border-left: 5px solid var(--skin-color); /* Add RTL border */
+}
+
+/* Adjustments for progress bar fill direction for RTL */
+html[dir="rtl"] .about .about-content .skills .skill-item .progress .progress-in {
+    right: 0; /* Start fill from the right */
+    left: unset; /* Reset LTR position */
+}
+
+/* Adjustments for skill percent text position for RTL */
+html[dir="rtl"] .about .about-content .skills .skill-item .skill-percent {
+    left: 0; /* Position text on the left for RTL */
+    right: unset; /* Reset LTR position */
+}
+
+/* Adjustments for toggler button position when sidebar is closed in RTL */
+html[dir="rtl"] .aside .nav-toggler {
+    left: unset; /* Reset LTR position */
+    right: 300px; /* Position on the right, shifted for RTL */
+}
+/* Adjustments for toggler button position when sidebar is open in RTL */
+html[dir="rtl"] .aside .nav-toggler.open {
+    left: unset; /* Reset LTR position */
+    right: 30px; /* Position on the right when open for RTL */
+}
+
+/* Adjustments for section position when aside is open in RTL */
+html[dir="rtl"] .section.open {
+    left: unset; /* Reset LTR position */
+    right: 270px; /* Shift content to the right when sidebar is open for RTL */
+}
+
+/* Adjustments for style switcher position when closed in RTL */
+html[dir="rtl"] .style-switcher {
+    right: unset; /* Reset LTR position */
+    left: 0; /* Position on the left for RTL */
+    transform: translateX(-100%); /* Hide by translating left (for RTL) */
+}
+/* Adjustments for style switcher position when open in RTL */
+html[dir="rtl"] .style-switcher.open {
+    transform: translateX(25px); /* Show by translating right (for RTL) */
+}
+
+/* Adjustments for style switcher icons position in RTL */
+html[dir="rtl"] .style-switcher .s-icon {
+    right: unset; /* Reset LTR position */
+    left: 100%; /* Position on the left for RTL */
+    margin-left: 25px; /* Margin to the left for RTL */
+    margin-right: 0; /* Reset LTR margin */
+}
+
+/* Animation for section sliding in for RTL */
+@keyframes slideSection {
+    0% {
+        transform: translateX(-100%); /* For RTL, slide from left */
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
