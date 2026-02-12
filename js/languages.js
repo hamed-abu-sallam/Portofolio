@@ -175,7 +175,7 @@ const translations = {
         'home_profession': 'I\'m a <span class=\"typing\">Web Designer</span>',
         'home_description': 'Computer Science graduate working on improving my skills in web design and graphic design. I focus on creating simple and functional websites. Learning technical support and design tools. Always eager to learn and practice new things through real projects.',
         'home_download_cv': 'Download CV',
-        'home_typing_strings': ["Web Designer", "Graphic Designer", "Multi-talented", "Digital Creator", "Content Producer", "Tech Support"],
+        'home_typing_strings': ["Web Designer", "Tech Support", "Content Creator", "Multi-talented"],
 
         'about_title': 'About Me',
         'about_intro': 'I\'m Hamed Abu Sallam, a <span class="text-highlight">Computer Science Graduate</span> developing my skills',
