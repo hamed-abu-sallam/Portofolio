@@ -63,27 +63,29 @@ ul {
     min-height: 100vh;
     display: block;
     padding: 0 30px;
-    opacity: 1;
+    opacity: 0;
     position: fixed;
     left: 270px; /* Default LTR position */
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 0;
+    z-index: 1;
     overflow: auto;
     overflow-x: hidden;
     transition: all 0.3s ease;
+    pointer-events: none;
 }
 
 /* Back section for transition effect */
 .section.back-section {
-    z-index: 1;
+    z-index: 2;
 }
 
 /* Active section for display */
 .section.active {
-    z-index: 2;
+    z-index: 3;
     opacity: 1;
+    pointer-events: auto;
     animation: slideSection 1s ease;
 }
 
@@ -119,8 +121,10 @@ ul {
 
 /* Section container padding */
 .section .container {
-    padding-top: 60px;
-    padding-bottom: 70px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* Section Title */
@@ -224,13 +228,15 @@ ul {
     left: 0; /* Default LTR position */
     top: 0;
     padding: 30px;
-    height: 100%;
+    height: 100vh;
     border-right: 1px solid var(--bg-black-50); /* Default LTR border */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    z-index: 10;
+    z-index: 15;
     transition: all 0.3s ease;
+    overflow-y: auto;
 }
 /* RTL specific border and position in language-styles.css */
 
@@ -297,7 +303,7 @@ ul {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    z-index: 11;
+    z-index: 20;
 }
 
 .aside .nav-toggler span {
@@ -569,6 +575,9 @@ h3.my-profession {
     margin: auto;
     border-radius: 5px;
     height: 350px;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 /* About Section Styles */

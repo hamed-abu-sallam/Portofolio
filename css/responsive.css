@@ -1,0 +1,413 @@
+/* === Responsive Design Styles === */
+/* Mobile-first approach with progressive enhancement */
+
+/* ===== Mobile Styles (320px - 480px) ===== */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Aside (Sidebar) - Hide on mobile, show with toggle */
+    .aside {
+        position: fixed;
+        left: -270px;
+        width: 270px;
+        height: 100vh;
+        top: 0;
+        z-index: 100;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    .aside.open {
+        left: 0;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Section - Full width on mobile */
+    .section {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100%;
+        min-height: 100vh;
+        padding: 15px;
+        z-index: 1;
+    }
+
+    .section.active {
+        z-index: 3;
+    }
+
+    /* Navigation Toggler - Visible on mobile */
+    .aside .nav-toggler {
+        display: flex !important;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        right: auto;
+        z-index: 105;
+    }
+
+    /* Home section */
+    .home .row {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .home-info {
+        width: 100%;
+        text-align: center;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .home-img {
+        width: 100%;
+        max-width: 280px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .home-img img {
+        width: 100%;
+        height: auto;
+        max-width: 280px;
+        border-radius: 10px;
+    }
+
+    /* Typography scaling */
+    .hello {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .my-profession {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .section .container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Button styling */
+    .btn {
+        font-size: 14px;
+        padding: 10px 25px;
+    }
+
+    /* Language switcher */
+    .language-switcher {
+        top: 60px;
+        left: 15px;
+        right: auto;
+    }
+
+    /* Color palette - hide on mobile */
+    .style-switcher {
+        display: none;
+    }
+
+    /* Tasks section */
+    .tasks-container {
+        padding: 0 !important;
+    }
+
+    .tasks-add {
+        padding: 0 !important;
+    }
+
+    .tasks-add input,
+    .tasks-add textarea,
+    .tasks-add select {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .form-item {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    /* Links section */
+    .links-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    /* Calendar */
+    .calendar-wrapper {
+        flex-direction: column;
+    }
+
+    .calendar-grid {
+        font-size: 12px;
+    }
+
+    /* Contact form */
+    .contact-info-item {
+        width: 100%;
+    }
+
+    .form-item {
+        margin-bottom: 15px;
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100% !important;
+    }
+
+    /* Columns - all full width */
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-6,
+    .col-12 {
+        max-width: 100% !important;
+    }
+}
+
+/* ===== Small Tablet Styles (481px - 768px) ===== */
+@media (max-width: 768px) {
+    /* Aside stays visible but narrower */
+    .aside {
+        width: 220px;
+        left: -220px;
+    }
+
+    .section {
+        left: 0;
+    }
+
+    /* Navigation toggle remains visible */
+    .aside .nav-toggler {
+        display: flex !important;
+        top: 20px;
+        left: 20px;
+    }
+
+    /* Home layout */
+    .home .row {
+        flex-direction: column;
+    }
+
+    .home-info,
+    .home-img {
+        width: 100%;
+    }
+
+    .home-img img {
+        max-width: 320px;
+        width: 100%;
+    }
+
+    /* Typography */
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .hello {
+        font-size: 20px;
+    }
+
+    .my-profession {
+        font-size: 18px;
+    }
+
+    /* Section padding */
+    .section .container {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    /* Grid adjustments */
+    .col-6 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+
+    .col-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Links grid */
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+    }
+
+    /* Language switcher */
+    .language-switcher {
+        top: 70px;
+    }
+}
+
+/* ===== Tablet Styles (769px - 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .section {
+        left: 250px;
+    }
+
+    .aside {
+        width: 250px;
+        left: 0;
+    }
+
+    .aside .nav-toggler {
+        display: none !important;
+    }
+
+    .section .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .home .row {
+        flex-direction: row;
+    }
+
+    .home-info,
+    .home-img {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .home-img img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Links grid */
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Calendar */
+    .calendar-wrapper {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .calendar-grid {
+        flex: 1;
+    }
+
+    .upcoming-events {
+        flex: 1;
+    }
+}
+
+/* ===== Desktop Styles (1025px+) ===== */
+@media (min-width: 1025px) {
+    .aside {
+        position: fixed;
+        width: 270px;
+        left: 0;
+        display: flex !important;
+    }
+
+    .aside .nav-toggler {
+        display: none !important;
+    }
+
+    .section {
+        left: 270px;
+    }
+
+    .home .row {
+        flex-direction: row;
+    }
+
+    .home-info {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .home-img {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Links grid */
+    .links-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px;
+    }
+
+    /* Calendar layout */
+    .calendar-wrapper {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .calendar-grid {
+        flex: 2;
+    }
+
+    .upcoming-events {
+        flex: 1;
+    }
+}
+
+/* ===== Large Desktop (1400px+) ===== */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .section .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .links-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+}
+
+/* ===== Landscape Orientation ===== */
+@media (max-height: 600px) {
+    .section .container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .section-title h2 {
+        font-size: 20px;
+    }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    .aside,
+    .nav-toggler,
+    .language-switcher,
+    .style-switcher {
+        display: none;
+    }
+
+    .section {
+        left: 0;
+        position: static;
+    }
+}

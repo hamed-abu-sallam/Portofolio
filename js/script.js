@@ -72,10 +72,6 @@ for (let i = 0; i < totalNavList; i++) {
             return;
         }
         
-        if (window.playNavigationSound) {
-            window.playNavigationSound(targetSectionId);
-        }
-
         // --- Step 1: Prepare the currently active section for transition out. ---
         // Find the section that is currently visible (has 'active' class).
         const currentActiveSection = document.querySelector(".section.active");
@@ -121,11 +117,6 @@ for (let i = 0; i < totalNavList; i++) {
 
 // Event listener for the "Hire Me" button in the About section.
 document.querySelector(".hire-me").addEventListener("click", function() {
-    // Play a musical sound (e.g., the sound for the contact section).
-    if (window.playNavigationSound) {
-        window.playNavigationSound('contact'); // Assuming 'hire-me' leads to 'contact' section
-    }
-
     // Find the navigation link corresponding to the 'Contact' section.
     const contactNavLink = document.querySelector(`.nav li a[href="#contact"]`);
     if (contactNavLink) {
@@ -208,12 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener("click", function(e) {
             e.preventDefault();
             
-            // Play a musical sound for certificates section
-            const certificatesSectionId = 'certificates';
-            if (window.playNavigationSound) {
-                window.playNavigationSound(certificatesSectionId);
-            }
-
             // Find the navigation link corresponding to the 'Certificates' section.
             const certificatesNavLink = document.querySelector(`.nav li a[href="#certificates"]`);
             if (certificatesNavLink) {

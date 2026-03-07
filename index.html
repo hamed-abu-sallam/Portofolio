@@ -12,6 +12,8 @@
     <title data-lang-key="page_title"></title>
     <!-- === CSS files === -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/tasks.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/skins/color-1.css">
     <!-- New language-specific styles for RTL/LTR adjustments -->
     <link rel="stylesheet" href="css/language-styles.css">
@@ -45,18 +47,15 @@
                 <li><a href="#certificates" data-lang-key="nav_certificates_title"><i class="fas fa-certificate"></i> <span data-lang-key="nav_certificates"></span> </a></li>
                 <li><a href="#services" data-lang-key="nav_services_title"><i class="fas fa-list"></i> <span data-lang-key="nav_services"></span> </a></li>
                 <li><a href="#portfolio" data-lang-key="nav_portfolio_title"><i class="fas fa-briefcase"></i> <span data-lang-key="nav_portfolio"></span> </a></li>
+                <li><a href="#tasks" data-lang-key="nav_tasks_title"><i class="fas fa-tasks"></i> <span data-lang-key="nav_tasks"></span> </a></li>
+                <li><a href="#links" data-lang-key="nav_links_title"><i class="fas fa-link"></i> <span data-lang-key="nav_links"></span> </a></li>
+                <li><a href="#calendar" data-lang-key="nav_calendar_title"><i class="fas fa-calendar"></i> <span data-lang-key="nav_calendar"></span> </a></li>
                 <li><a href="#contact" data-lang-key="nav_contact_title"><i class="fas fa-comments"></i> <span data-lang-key="nav_contact"></span> </a></li>
             </ul>
             <!-- Language Switcher Buttons moved inside aside for consistency -->
             <div class="language-switcher">
                 <button id="lang-ar" class="lang-button">AR</button>
                 <button id="lang-en" class="lang-button">EN</button>
-            </div>
-            <!-- Audio Toggle Button -->
-            <div class="audio-toggle-wrapper">
-                <button id="audioToggle" class="audio-toggle-btn" onclick="toggleAudio()" title="Click to disable audio">
-                    <i class="fas fa-volume-up"></i>
-                </button>
             </div>
             <!-- Social Links -->
             <div class="social-links">
@@ -551,6 +550,100 @@
             </section>
             <!-- === Services Section End === -->
 
+            <!-- === Tasks Section Start === -->
+            <section class="tasks section" id="tasks">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2 data-lang-key="tasks_title">Tasks</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="tasks-container padd-15">
+                            <div class="tasks-add padd-15">
+                                <form id="addTaskForm" onsubmit="handleAddTask(event)">
+                                    <div class="row">
+                                        <div class="form-item col-6 padd-15">
+                                            <input type="text" id="taskTitle" placeholder="Task title" required>
+                                        </div>
+                                        <div class="form-item col-6 padd-15">
+                                            <select id="taskCategory">
+                                                <option value="project">Project</option>
+                                                <option value="academy">Academy</option>
+                                                <option value="freelance">Freelance</option>
+                                                <option value="support">Support</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-item col-12 padd-15">
+                                            <textarea id="taskDescription" placeholder="Task description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-item col-12 padd-15">
+                                            <button type="submit" class="btn">Add Task</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tasks-list padd-15" id="tasksList">
+                                <!-- Tasks will be rendered here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- === Tasks Section End === -->
+
+            <!-- === Links Section Start === -->
+            <section class="links section" id="links">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2 data-lang-key="links_title">Links & QR</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="links-container padd-15">
+                            <div class="links-grid" id="linksGrid">
+                                <!-- Links will be rendered here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- === Links Section End === -->
+
+            <!-- === Calendar Section Start === -->
+            <section class="calendar section" id="calendar">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2 data-lang-key="calendar_title">Calendar</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="calendar-container padd-15">
+                            <div class="calendar-header">
+                                <button id="prevMonth" class="btn-nav">&larr;</button>
+                                <h3 id="monthTitle"></h3>
+                                <button id="nextMonth" class="btn-nav">&rarr;</button>
+                            </div>
+                            <div class="calendar-wrapper">
+                                <div class="calendar-grid" id="calendarGrid">
+                                    <!-- Calendar will be rendered here -->
+                                </div>
+                                <div class="upcoming-events padd-15" id="upcomingEvents">
+                                    <!-- Upcoming events will be rendered here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- === Calendar Section End === -->
+
             <!-- === Portfolio Section Start === -->
             <section class="portfolio section" id="portfolio">
                 <div class="container">
@@ -731,19 +824,23 @@
      </div>
     <!-- === Style Switcher End === -->
 
-    <!-- Tone.js CDN for audio synthesis -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js" defer></script>
     <!-- typed.js for typing animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <!-- EmailJS SDK - MUST load before email-handler.js -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/index.min.js" onload="window.emailJSLoaded = true; console.log('%c✓ EmailJS CDN loaded successfully', 'color: green; font-weight: bold;');" onerror="console.error('%c✗ EmailJS CDN failed to load', 'color: red; font-weight: bold;');"></script>
+    <!-- QRCode.js for QR code generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
     
     <!-- Separate languages.js file -->
     <script src="js/languages.js" defer></script>
-    <!-- Separate audio.js file -->
-    <script src="js/audio.js" defer></script>
     <!-- EmailJS configuration and form handler -->
     <script src="js/email-handler.js" defer></script>
+    <!-- Task management system -->
+    <script src="js/tasks.js" defer></script>
+    <!-- Links and QR codes management -->
+    <script src="js/links.js" defer></script>
+    <!-- Calendar functionality -->
+    <script src="js/calendar.js" defer></script>
     <!-- Your main script.js -->
     <script src="js/script.js" defer></script>
     <!-- Your style-switcher.js -->

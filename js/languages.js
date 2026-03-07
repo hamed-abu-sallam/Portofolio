@@ -150,7 +150,22 @@ const translations = {
         'form_subject_placeholder': 'الموضوع',
         'form_message_placeholder': 'رسالتك',
         'form_send_message_button': 'إرسال الرسالة',
-        'theme_colors_title': 'ألوان الثيم'
+        'theme_colors_title': 'ألوان الثيم',
+
+        // Tasks section
+        'nav_tasks_title': 'المهام',
+        'nav_tasks': 'المهام',
+        'tasks_title': 'المهام والجدولة',
+
+        // Links section
+        'nav_links_title': 'الروابط',
+        'nav_links': 'الروابط',
+        'links_title': 'روابطي وأكواد QR',
+
+        // Calendar section
+        'nav_calendar_title': 'التقويم',
+        'nav_calendar': 'التقويم',
+        'calendar_title': 'تقويمي'
     },
     'en': {
         // English translations
@@ -294,7 +309,22 @@ const translations = {
         'form_subject_placeholder': 'Subject',
         'form_message_placeholder': 'Your Message',
         'form_send_message_button': 'Send Message',
-        'theme_colors_title': 'Theme Colors'
+        'theme_colors_title': 'Theme Colors',
+
+        // Tasks section
+        'nav_tasks_title': 'Tasks',
+        'nav_tasks': 'Tasks',
+        'tasks_title': 'Tasks & Scheduling',
+
+        // Links section
+        'nav_links_title': 'Links',
+        'nav_links': 'Links',
+        'links_title': 'My Links & QR Codes',
+
+        // Calendar section
+        'nav_calendar_title': 'Calendar',
+        'nav_calendar': 'Calendar',
+        'calendar_title': 'My Calendar'
     }
 };
 
