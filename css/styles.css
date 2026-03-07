@@ -569,6 +569,9 @@ h3.my-profession {
     margin: auto;
     border-radius: 5px;
     height: 350px;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 /* About Section Styles */
