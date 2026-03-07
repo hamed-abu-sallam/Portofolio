@@ -3,12 +3,12 @@
 
 /* ===== Mobile Styles (320px - 480px) ===== */
 @media (max-width: 480px) {
-    /* Main container */
-    .main-container {
-        flex-direction: column;
+    body {
+        padding: 0;
+        margin: 0;
     }
 
-    /* Aside (Sidebar) */
+    /* Aside (Sidebar) - Hide on mobile, show with toggle */
     .aside {
         position: fixed;
         left: -270px;
@@ -17,452 +17,383 @@
         top: 0;
         z-index: 100;
         transition: left 0.3s ease;
+        overflow-y: auto;
+        padding: 20px;
     }
 
     .aside.open {
         left: 0;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     }
 
-    /* Main content adjustments */
+    /* Section - Full width on mobile */
     .section {
-        left: 0;
-        padding: 20px;
-        overflow-y: auto;
-        padding-top: 60px;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100%;
+        min-height: 100vh;
+        padding: 15px;
+        z-index: 1;
     }
 
-    .section.open {
-        left: 0;
+    .section.active {
+        z-index: 3;
     }
 
-    /* Navigation */
-    .nav-toggler {
-        display: block;
+    /* Navigation Toggler - Visible on mobile */
+    .aside .nav-toggler {
+        display: flex !important;
         position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 101;
+        top: 15px;
+        left: 15px;
+        right: auto;
+        z-index: 105;
     }
 
     /* Home section */
     .home .row {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
     }
 
     .home-info {
-        margin-bottom: 20px !important;
+        width: 100%;
+        text-align: center;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     .home-img {
-        display: flex;
-        justify-content: center;
+        width: 100%;
+        max-width: 280px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     .home-img img {
-        max-width: 100%;
-        height: auto;
         width: 100%;
-        max-width: 300px;
+        height: auto;
+        max-width: 280px;
+        border-radius: 10px;
     }
 
     /* Typography scaling */
     .hello {
         font-size: 18px;
+        margin-bottom: 10px;
     }
 
     .my-profession {
         font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        font-size: 14px;
+        line-height: 1.6;
     }
 
     .section-title h2 {
         font-size: 24px;
+        margin-bottom: 30px;
     }
 
-    /* Grid adjustments */
-    .row {
-        margin: 0 -10px;
+    .section .container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
-    .col-6,
-    .col-12 {
-        padding: 10px !important;
+    /* Button styling */
+    .btn {
+        font-size: 14px;
+        padding: 10px 25px;
     }
 
-    .col-6 {
-        width: 100% !important;
+    /* Language switcher */
+    .language-switcher {
+        top: 60px;
+        left: 15px;
+        right: auto;
     }
 
-    /* Skills and info */
-    .personal-info .row {
-        flex-direction: column;
+    /* Color palette - hide on mobile */
+    .style-switcher {
+        display: none;
     }
 
-    .info-item {
-        width: 100% !important;
-        padding: 10px !important;
-    }
-
-    /* Portfolio grid */
-    .portfolio-item {
-        width: 100% !important;
-    }
-
-    /* Service items */
-    .service-item {
-        width: 100% !important;
-    }
-
-    /* Contact form */
-    .form-item {
-        width: 100% !important;
-        padding: 10px !important;
-    }
-
-    .contact-info-item {
-        width: 100% !important;
-    }
-
-    /* Certificate grid */
-    .certificate-item {
-        width: 100% !important;
-    }
-
-    /* Tasks and Links */
-    .tasks-container,
-    .links-container,
-    .calendar-container {
+    /* Tasks section */
+    .tasks-container {
         padding: 0 !important;
     }
 
+    .tasks-add {
+        padding: 0 !important;
+    }
+
+    .tasks-add input,
+    .tasks-add textarea,
+    .tasks-add select {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .form-item {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    /* Links section */
     .links-grid {
         grid-template-columns: 1fr !important;
-    }
-
-    .task-item {
-        flex-direction: column;
-        padding: 15px !important;
-    }
-
-    .task-actions {
-        width: 100%;
-        margin-top: 10px;
+        gap: 15px;
     }
 
     /* Calendar */
     .calendar-wrapper {
-        grid-template-columns: 1fr !important;
-    }
-
-    .calendar-header {
         flex-direction: column;
-        gap: 10px;
     }
 
     .calendar-grid {
-        padding: 15px !important;
+        font-size: 12px;
     }
 
-    .calendar-dates {
-        gap: 5px;
-    }
-
-    .calendar-date {
-        font-size: 11px;
-        padding: 5px;
-    }
-
-    /* Avatar image */
-    .home-img img {
+    /* Contact form */
+    .contact-info-item {
         width: 100%;
-        max-width: 200px;
-        height: auto;
-        border-radius: 8px;
+    }
+
+    .form-item {
+        margin-bottom: 15px;
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100% !important;
+    }
+
+    /* Columns - all full width */
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-6,
+    .col-12 {
+        max-width: 100% !important;
     }
 }
 
-/* ===== Tablet Styles (481px - 768px) ===== */
-@media (min-width: 481px) and (max-width: 768px) {
-    /* Aside */
+/* ===== Small Tablet Styles (481px - 768px) ===== */
+@media (max-width: 768px) {
+    /* Aside stays visible but narrower */
     .aside {
-        width: 200px;
+        width: 220px;
+        left: -220px;
     }
 
     .section {
-        left: 200px;
-        padding: 25px;
+        left: 0;
     }
 
-    /* Grid adjustments */
-    .col-6 {
-        width: 50% !important;
+    /* Navigation toggle remains visible */
+    .aside .nav-toggler {
+        display: flex !important;
+        top: 20px;
+        left: 20px;
     }
 
-    .row {
-        margin: 0 -12px;
+    /* Home layout */
+    .home .row {
+        flex-direction: column;
     }
 
-    .padd-15 {
-        padding: 12px !important;
+    .home-info,
+    .home-img {
+        width: 100%;
+    }
+
+    .home-img img {
+        max-width: 320px;
+        width: 100%;
     }
 
     /* Typography */
-    .hello {
-        font-size: 24px;
-    }
-
-    .my-profession {
-        font-size: 20px;
-    }
-
     .section-title h2 {
         font-size: 28px;
     }
 
-    /* Portfolio grid */
-    .portfolio-item {
-        width: 50% !important;
+    .hello {
+        font-size: 20px;
     }
 
-    /* Service items */
-    .service-item {
-        width: 50% !important;
+    .my-profession {
+        font-size: 18px;
     }
 
-    /* Certificate grid */
-    .certificate-item {
-        width: 50% !important;
+    /* Section padding */
+    .section .container {
+        padding-top: 70px;
+        padding-bottom: 70px;
     }
 
-    /* Links and Tasks */
+    /* Grid adjustments */
+    .col-6 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+
+    .col-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Links grid */
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+    }
+
+    /* Language switcher */
+    .language-switcher {
+        top: 70px;
+    }
+}
+
+/* ===== Tablet Styles (769px - 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .section {
+        left: 250px;
+    }
+
+    .aside {
+        width: 250px;
+        left: 0;
+    }
+
+    .aside .nav-toggler {
+        display: none !important;
+    }
+
+    .section .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .home .row {
+        flex-direction: row;
+    }
+
+    .home-info,
+    .home-img {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .home-img img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Links grid */
     .links-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 
     /* Calendar */
     .calendar-wrapper {
-        grid-template-columns: 1fr 280px;
+        flex-direction: row;
+        gap: 30px;
     }
 
-    /* Avatar image */
-    .home-img img {
-        max-width: 250px;
-    }
-}
-
-/* ===== Small Desktop Styles (769px - 1024px) ===== */
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* Aside */
-    .aside {
-        width: 250px;
+    .calendar-grid {
+        flex: 1;
     }
 
-    .section {
-        left: 250px;
-        padding: 30px;
-    }
-
-    /* Grid adjustments */
-    .col-6 {
-        width: 50% !important;
-    }
-
-    /* Portfolio grid */
-    .portfolio-item {
-        width: 50% !important;
-    }
-
-    /* Service items */
-    .service-item {
-        width: 33.33% !important;
-    }
-
-    /* Certificate grid */
-    .certificate-item {
-        width: 50% !important;
-    }
-
-    /* Links grid */
-    .links-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-
-    /* Avatar image */
-    .home-img img {
-        max-width: 300px;
+    .upcoming-events {
+        flex: 1;
     }
 }
 
 /* ===== Desktop Styles (1025px+) ===== */
 @media (min-width: 1025px) {
     .aside {
+        position: fixed;
         width: 270px;
+        left: 0;
+        display: flex !important;
+    }
+
+    .aside .nav-toggler {
+        display: none !important;
     }
 
     .section {
         left: 270px;
     }
 
-    /* Portfolio grid */
-    .portfolio-item {
-        width: 33.33% !important;
+    .home .row {
+        flex-direction: row;
     }
 
-    /* Service items */
-    .service-item {
-        width: 33.33% !important;
+    .home-info {
+        flex: 0 0 50%;
+        max-width: 50%;
     }
 
-    /* Certificate grid */
-    .certificate-item {
-        width: 33.33% !important;
+    .home-img {
+        flex: 0 0 50%;
+        max-width: 50%;
     }
 
     /* Links grid */
     .links-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px;
+    }
+
+    /* Calendar layout */
+    .calendar-wrapper {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .calendar-grid {
+        flex: 2;
+    }
+
+    .upcoming-events {
+        flex: 1;
+    }
+}
+
+/* ===== Large Desktop (1400px+) ===== */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .section .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .links-grid {
         grid-template-columns: repeat(4, 1fr) !important;
     }
-
-    /* Avatar image */
-    .home-img img {
-        max-width: 400px;
-    }
 }
 
-/* ===== Image Responsive Styles ===== */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Home image container */
-.home-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-}
-
-.home-img img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* Certificate images */
-.cert-img-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* Portfolio images */
-.portfolio-item-inner img {
-    width: 100%;
-    height: auto;
-}
-
-/* Avatar specific styles - ensure it scales properly */
-.avatar-img {
-    max-width: 100%;
-    height: auto;
-    width: 100%;
-}
-
-/* ===== Flexible Typography ===== */
-@media (max-width: 480px) {
-    body {
-        font-size: 14px;
+/* ===== Landscape Orientation ===== */
+@media (max-height: 600px) {
+    .section .container {
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
-    h1 {
-        font-size: 24px;
-    }
-
-    h2 {
+    .section-title h2 {
         font-size: 20px;
-    }
-
-    h3 {
-        font-size: 18px;
-    }
-
-    h4 {
-        font-size: 16px;
-    }
-
-    .btn {
-        padding: 8px 16px;
-        font-size: 12px;
-    }
-}
-
-/* ===== Flexible Form Styles ===== */
-.form-control {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 5px;
-}
-
-@media (max-width: 480px) {
-    .form-control {
-        padding: 8px;
-        font-size: 13px;
-    }
-}
-
-/* ===== Flexible Button Styles ===== */
-.btn {
-    display: inline-block;
-    padding: 10px 25px;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-@media (max-width: 480px) {
-    .btn {
-        padding: 8px 16px;
-        font-size: 12px;
-        width: 100%;
-    }
-}
-
-/* ===== Flexible Container Styles ===== */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-/* ===== Touch-friendly Styles ===== */
-@media (max-width: 768px) {
-    /* Increase touch target sizes */
-    a,
-    button,
-    .nav a {
-        padding: 12px;
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-    }
-
-    /* Improve button spacing */
-    .btn {
-        min-height: 44px;
-    }
-
-    /* Improve link spacing */
-    .nav li a {
-        padding: 15px;
     }
 }
 
@@ -470,8 +401,8 @@ img {
 @media print {
     .aside,
     .nav-toggler,
-    .style-switcher,
-    .contact-form {
+    .language-switcher,
+    .style-switcher {
         display: none;
     }
 
