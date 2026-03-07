@@ -1,0 +1,482 @@
+/* === Responsive Design Styles === */
+/* Mobile-first approach with progressive enhancement */
+
+/* ===== Mobile Styles (320px - 480px) ===== */
+@media (max-width: 480px) {
+    /* Main container */
+    .main-container {
+        flex-direction: column;
+    }
+
+    /* Aside (Sidebar) */
+    .aside {
+        position: fixed;
+        left: -270px;
+        width: 270px;
+        height: 100vh;
+        top: 0;
+        z-index: 100;
+        transition: left 0.3s ease;
+    }
+
+    .aside.open {
+        left: 0;
+    }
+
+    /* Main content adjustments */
+    .section {
+        left: 0;
+        padding: 20px;
+        overflow-y: auto;
+        padding-top: 60px;
+    }
+
+    .section.open {
+        left: 0;
+    }
+
+    /* Navigation */
+    .nav-toggler {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 101;
+    }
+
+    /* Home section */
+    .home .row {
+        flex-direction: column;
+    }
+
+    .home-info {
+        margin-bottom: 20px !important;
+    }
+
+    .home-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .home-img img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Typography scaling */
+    .hello {
+        font-size: 18px;
+    }
+
+    .my-profession {
+        font-size: 16px;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+    /* Grid adjustments */
+    .row {
+        margin: 0 -10px;
+    }
+
+    .col-6,
+    .col-12 {
+        padding: 10px !important;
+    }
+
+    .col-6 {
+        width: 100% !important;
+    }
+
+    /* Skills and info */
+    .personal-info .row {
+        flex-direction: column;
+    }
+
+    .info-item {
+        width: 100% !important;
+        padding: 10px !important;
+    }
+
+    /* Portfolio grid */
+    .portfolio-item {
+        width: 100% !important;
+    }
+
+    /* Service items */
+    .service-item {
+        width: 100% !important;
+    }
+
+    /* Contact form */
+    .form-item {
+        width: 100% !important;
+        padding: 10px !important;
+    }
+
+    .contact-info-item {
+        width: 100% !important;
+    }
+
+    /* Certificate grid */
+    .certificate-item {
+        width: 100% !important;
+    }
+
+    /* Tasks and Links */
+    .tasks-container,
+    .links-container,
+    .calendar-container {
+        padding: 0 !important;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .task-item {
+        flex-direction: column;
+        padding: 15px !important;
+    }
+
+    .task-actions {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Calendar */
+    .calendar-wrapper {
+        grid-template-columns: 1fr !important;
+    }
+
+    .calendar-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .calendar-grid {
+        padding: 15px !important;
+    }
+
+    .calendar-dates {
+        gap: 5px;
+    }
+
+    .calendar-date {
+        font-size: 11px;
+        padding: 5px;
+    }
+
+    /* Avatar image */
+    .home-img img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        border-radius: 8px;
+    }
+}
+
+/* ===== Tablet Styles (481px - 768px) ===== */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Aside */
+    .aside {
+        width: 200px;
+    }
+
+    .section {
+        left: 200px;
+        padding: 25px;
+    }
+
+    /* Grid adjustments */
+    .col-6 {
+        width: 50% !important;
+    }
+
+    .row {
+        margin: 0 -12px;
+    }
+
+    .padd-15 {
+        padding: 12px !important;
+    }
+
+    /* Typography */
+    .hello {
+        font-size: 24px;
+    }
+
+    .my-profession {
+        font-size: 20px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    /* Portfolio grid */
+    .portfolio-item {
+        width: 50% !important;
+    }
+
+    /* Service items */
+    .service-item {
+        width: 50% !important;
+    }
+
+    /* Certificate grid */
+    .certificate-item {
+        width: 50% !important;
+    }
+
+    /* Links and Tasks */
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Calendar */
+    .calendar-wrapper {
+        grid-template-columns: 1fr 280px;
+    }
+
+    /* Avatar image */
+    .home-img img {
+        max-width: 250px;
+    }
+}
+
+/* ===== Small Desktop Styles (769px - 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Aside */
+    .aside {
+        width: 250px;
+    }
+
+    .section {
+        left: 250px;
+        padding: 30px;
+    }
+
+    /* Grid adjustments */
+    .col-6 {
+        width: 50% !important;
+    }
+
+    /* Portfolio grid */
+    .portfolio-item {
+        width: 50% !important;
+    }
+
+    /* Service items */
+    .service-item {
+        width: 33.33% !important;
+    }
+
+    /* Certificate grid */
+    .certificate-item {
+        width: 50% !important;
+    }
+
+    /* Links grid */
+    .links-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    /* Avatar image */
+    .home-img img {
+        max-width: 300px;
+    }
+}
+
+/* ===== Desktop Styles (1025px+) ===== */
+@media (min-width: 1025px) {
+    .aside {
+        width: 270px;
+    }
+
+    .section {
+        left: 270px;
+    }
+
+    /* Portfolio grid */
+    .portfolio-item {
+        width: 33.33% !important;
+    }
+
+    /* Service items */
+    .service-item {
+        width: 33.33% !important;
+    }
+
+    /* Certificate grid */
+    .certificate-item {
+        width: 33.33% !important;
+    }
+
+    /* Links grid */
+    .links-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    /* Avatar image */
+    .home-img img {
+        max-width: 400px;
+    }
+}
+
+/* ===== Image Responsive Styles ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Home image container */
+.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.home-img img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Certificate images */
+.cert-img-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Portfolio images */
+.portfolio-item-inner img {
+    width: 100%;
+    height: auto;
+}
+
+/* Avatar specific styles - ensure it scales properly */
+.avatar-img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+/* ===== Flexible Typography ===== */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+/* ===== Flexible Form Styles ===== */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+@media (max-width: 480px) {
+    .form-control {
+        padding: 8px;
+        font-size: 13px;
+    }
+}
+
+/* ===== Flexible Button Styles ===== */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 8px 16px;
+        font-size: 12px;
+        width: 100%;
+    }
+}
+
+/* ===== Flexible Container Styles ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* ===== Touch-friendly Styles ===== */
+@media (max-width: 768px) {
+    /* Increase touch target sizes */
+    a,
+    button,
+    .nav a {
+        padding: 12px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Improve button spacing */
+    .btn {
+        min-height: 44px;
+    }
+
+    /* Improve link spacing */
+    .nav li a {
+        padding: 15px;
+    }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    .aside,
+    .nav-toggler,
+    .style-switcher,
+    .contact-form {
+        display: none;
+    }
+
+    .section {
+        left: 0;
+        position: static;
+    }
+}
